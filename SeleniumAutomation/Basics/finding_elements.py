@@ -42,3 +42,12 @@ products: List = driver.find_elements(By.CLASS_NAME, "product")
 print(product)
 print(products)
 stop_browser()
+
+# Finding elements by link text
+driver = start_browser()
+link_element: WebElement
+link_element = driver.find_element(By.LINK_TEXT, "Cart")
+print(link_element.text, type(link_element))
+link_element = driver.find_element(By.LINK_TEXT, "My account")
+print(link_element.text, type(link_element))
+stop_browser()
