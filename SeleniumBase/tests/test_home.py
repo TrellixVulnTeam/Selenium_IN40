@@ -1,23 +1,20 @@
 from typing import List
-
-from seleniumbase import BaseCase
+from pageObjects.home_page import HomePage
 
 
 # https://www.youtube.com/watch?v=D0-QGMacMxA&t=5338s
 
-class HomeTest(BaseCase):
+
+class HomeTest(HomePage):
 
     def setUp(self, masterqa_mode=False):
         super(HomeTest, self).setUp()
 
         # LOGIN
-        self.open("https://practice.automationbro.com/my-account")
-        self.add_text("[id='username']", "user_test")
-        self.add_text("[id='password']", "testuser##123")
-        self.click("button[name='login']")
-        self.assert_text("Logout", "[class~='woocommerce-MyAccount-navigation-link--customer-logout']")
+        self.login()
 
-        self.open("https://practice.automationbro.com/")
+        # open home page
+        self.open_page()
 
     def tearDown(self):
         print("Running after each test")
@@ -59,3 +56,5 @@ class HomeTest(BaseCase):
         for index, link in enumerate(menu_links):
             # print(index, link.text)
             self.assert_equal(expected_links[index], link.text)
+
+
