@@ -50,8 +50,7 @@ class HomeTest(HomePage):
         # find menu links elements
         menu_links: List = self.find_elements("ul[id='primary-menu'] > li[class~='menu-item-type-post_type']")
 
-        # pytest -k "test_menu_links" --- run only this test
-        # pytest -k "test_menu_links" -s --- to print out the results to console
+
 
         for index, link in enumerate(menu_links):
             # print(index, link.text)

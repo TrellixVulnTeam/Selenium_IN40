@@ -1,0 +1,7 @@
+# pytest -k "test_menu_links"                        === run only this test
+# pytest -k "test_menu_links" -s                     === to print out the results to console
+# pytest --dashboard                                 === to run all the test and generate a html report
+# pytest --html=report.html                          === to generate a html report
+# pytest -k ShopTest --browser=Firefox               === to run on firefox
+# pytest -n=3                                        === to run on more than one browser instance
+# pytest -k ShopTest --headless                      === to run on headless mode

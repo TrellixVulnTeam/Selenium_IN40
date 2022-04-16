@@ -8,6 +8,7 @@ class CartPage(BaseCase):
     update_cart_btn = "button[name='update_cart']"
     product_quantity_input = "input[id^='quantity']"
     loading_overlay = ".woocommerce-cart-form div[class*='blockOverlay']"
+    click_view_cart = "a[class~='added_to_cart'][title='View cart']"
 
     def open_page(self):
-        self.open("https://practice.automationbro.com/cart")
+        self.open("https://practice.automationbro.com/cart/")
